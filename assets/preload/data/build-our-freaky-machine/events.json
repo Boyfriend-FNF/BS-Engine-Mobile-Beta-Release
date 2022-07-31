@@ -1,0 +1,76 @@
+{
+	"song": {
+		"events": [
+			[
+				32538.4615384615,
+				[
+					[
+						"Play Animation",
+						"You've got this",
+						"Dad"
+					]
+				]
+			],
+			[
+				95307.6923076923,
+				[
+					[
+						"Play Animation",
+						"You've got this",
+						"Dad"
+					]
+				]
+			],
+			[
+				95307.6923076923,
+				[
+					[
+						"Play Animation",
+						"You've got this",
+						"Dad"
+					]
+				]
+			],
+			[
+				147692.307692308,
+				[
+					[
+						"Change Character",
+						"bf",
+						"BoyFriend_DA - Black and White"
+					]
+				]
+			],
+			[
+				177230.769230769,
+				[
+					[
+						"Change Character",
+						"bf",
+						"BoyFriend_DA"
+					]
+				]
+			],
+			[
+				189923.076923077,
+				[
+					[
+						"Change Character",
+						"dad",
+						"Bendy_IC"
+					]
+				]
+			],
+			[
+				192000,
+				[
+					[
+						"Change Character",
+						"dad",
+						"Bendy_DA"
+					]
+				]
+			]
+		]
+	}
+}

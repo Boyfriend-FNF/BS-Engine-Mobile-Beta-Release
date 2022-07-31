@@ -1,0 +1,224 @@
+{
+	"song": {
+		"speed": 2.6,
+		"stage": "PapyrusBG",
+		"player1": "BF_Christmas_IC",
+		"player2": "Sans_IC",
+		"player3": null,
+		"events": [
+			[
+				19000,
+				[
+					[
+						"3rdstrum",
+						"True",
+						""
+					]
+				]
+			],
+			[
+				19200,
+				[
+					[
+						"Set Cam Zoom",
+						"1.1",
+						"4"
+					]
+				]
+			],
+			[
+				23900,
+				[
+					[
+						"Play Animation",
+						"GoingToSleep",
+						""
+					]
+				]
+			],
+			[
+				24800,
+				[
+					[
+						"Set Cam Zoom",
+						"0.8",
+						"0.5"
+					]
+				]
+			],
+			[
+				25200,
+				[
+					[
+						"Play Animation",
+						"Sleeping",
+						"dad"
+					],
+					[
+						"Play Animation",
+						"!",
+						"gf"
+					]
+				]
+			],
+			[
+				25212.5,
+				[
+					[
+						"3rdstrum",
+						"False",
+						""
+					]
+				]
+			],
+			[
+				25300,
+				[
+					[
+						"Set Cam Zoom",
+						"0.75",
+						"0.5"
+					]
+				]
+			],
+			[
+				25600,
+				[
+					[
+						"Play Animation",
+						"Mad",
+						"gf"
+					]
+				]
+			],
+			[
+				30000,
+				[
+					[
+						"Play Animation",
+						"WakingUp",
+						"dad"
+					],
+					[
+						"3rdstrum",
+						"True",
+						""
+					]
+				]
+			],
+			[
+				32000,
+				[
+					[
+						"Set Cam Zoom",
+						"0.9",
+						"0.5"
+					]
+				]
+			],
+			[
+				70000,
+				[
+					[
+						"Play Animation",
+						"LightSaber",
+						"dad"
+					],
+					[
+						"Play Animation",
+						"Bruh",
+						"gf"
+					]
+				]
+			],
+			[
+				70100,
+				[
+					[
+						"Set Cam Zoom",
+						"0.8",
+						"0.5"
+					]
+				]
+			],
+			[
+				77100,
+				[
+					[
+						"Play Animation",
+						"Mad",
+						"gf"
+					]
+				]
+			],
+			[
+				81200,
+				[
+					[
+						"Play Animation",
+						"BackToIdle",
+						"dad"
+					],
+					[
+						"Play Animation",
+						"idle-alt",
+						"gf"
+					]
+				]
+			],
+			[
+				82400,
+				[
+					[
+						"Play Animation",
+						":)",
+						"dad"
+					]
+				]
+			],
+			[
+				82800,
+				[
+					[
+						"Play Animation",
+						"Let's go",
+						"gf"
+					]
+				]
+			],
+			[
+				123200,
+				[
+					[
+						"Play Animation",
+						"GoingToSleep",
+						"dad"
+					]
+				]
+			],
+			[
+				124400,
+				[
+					[
+						"Play Animation",
+						"Sleeping",
+						"dad"
+					],
+					[
+						"Play Animation",
+						"Bruh",
+						"gf"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "Papyrus_IC",
+		"bpm": 150,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Bonedoggle"
+	}
+}
