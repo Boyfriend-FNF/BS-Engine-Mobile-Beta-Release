@@ -236,6 +236,7 @@ class ChartingState extends MusicBeatState
 			_song = {
 				song: 'Test',
 				notes: [],
+                                events: [],
 				bpm: 150.0,
 				needsVoices: true,
 				arrowSkin: '',
@@ -2168,6 +2169,7 @@ class ChartingState extends MusicBeatState
 
 		var eventsSong:SwagSong = {
 			song: _song.song,
+                        events: _song.events,
 			notes: events,
 			bpm: _song.bpm,
 			needsVoices: _song.needsVoices,
