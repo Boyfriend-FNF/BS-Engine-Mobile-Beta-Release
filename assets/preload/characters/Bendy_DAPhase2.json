@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-90,
+				-41
+			],
+			"anim": "ugh lowblow",
+			"fps": 24,
+			"name": "ugh lowblow instance 1",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				123,
+				-1
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Oblivion Bendy instance 1",
+			"indices": []
+		},
+		{
+			"offsets": [
+				60,
+				-24
+			],
+			"indices": [],
+			"fps": 26,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Right Oblivion instance 1"
+		},
+		{
+			"offsets": [
+				-32,
+				44
+			],
+			"indices": [],
+			"fps": 26,
+			"anim": "singUP",
+			"loop": false,
+			"name": "Up Oblivion instance 1"
+		},
+		{
+			"offsets": [
+				152,
+				-52
+			],
+			"indices": [],
+			"fps": 26,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Left Oblivion instance 1"
+		},
+		{
+			"offsets": [
+				77,
+				-49
+			],
+			"indices": [],
+			"fps": 26,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Down Oblivion instance 1"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/bendy/BendyDAgames",
+	"position": [
+		40,
+		150
+	],
+	"healthicon": "bendyDA",
+	"flip_x": false,
+	"healthbar_colors": [
+		35,
+		41,
+		47
+	],
+	"camera_position": [
+		0,
+		100
+	],
+	"sing_duration": 4.00000000000001,
+	"scale": 1.3
+}
