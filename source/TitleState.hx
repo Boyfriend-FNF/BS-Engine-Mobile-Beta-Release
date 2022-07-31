@@ -8,6 +8,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.group.FlxGroup;
+import haxe.Json;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.input.keyboard.FlxKey;
 import flixel.tweens.FlxEase;
@@ -43,6 +44,8 @@ class TitleState extends MusicBeatState
 
 	var mustUpdate:Bool = false;
 	public static var updateVersion:String = '';
+	
+	var titleJSON:TitleData;
 
 	override public function create():Void
 	{
@@ -92,6 +95,9 @@ class TitleState extends MusicBeatState
 		ClientPrefs.loadPrefs();
 
 		Highscore.load();
+		
+		// IGNORE THIS!!!
+		titleJSON = Json.parse(Paths.getTextFromFile('images/gfDanceTitle.json'));
 
 		if (FlxG.save.data.weekCompleted != null)
 		{
@@ -155,14 +161,24 @@ class TitleState extends MusicBeatState
 			}
 		}
 
-		Conductor.changeBPM(102);
+		Conductor.changeBPM(titleJSON.bpm);
 		persistentUpdate = true;
 
-		//var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var bg:FlxSprite = new FlxSprite();
+
+		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
+			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
+		}else{
+			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		}
+
 		// bg.antialiasing = ClientPrefs.globalAntialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
-		//add(bg);
+		add(bg);
+		
+		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
+		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 
 		logoBl = new FlxSprite(-150, -100);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
@@ -174,6 +190,7 @@ class TitleState extends MusicBeatState
 		// logoBl.color = FlxColor.BLACK;
 
 		swagShader = new ColorSwap();
+		gfDance = new FlxSprite(titleJSON.gfx, titleJSON.gfy);
 		if(!FlxG.save.data.psykaEasterEgg) {
 			gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 			gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
@@ -185,6 +202,8 @@ class TitleState extends MusicBeatState
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
 		//logoBl.shader = swagShader.shader;
+		
+		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
 		titleText.frames = Paths.getSparrowAtlas('titleEnter');
