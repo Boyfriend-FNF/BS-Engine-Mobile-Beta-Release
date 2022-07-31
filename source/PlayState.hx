@@ -685,6 +685,7 @@ class PlayState extends MusicBeatState
 		#if LUA_ALLOWED
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:String = 'scripts/';
+	        foldersToCheck = Paths.getPreloadPath(folder + file);
 
 		for (folder in foldersToCheck)
 		{
@@ -1039,6 +1040,7 @@ class PlayState extends MusicBeatState
 		#if LUA_ALLOWED
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
+	        foldersToCheck = Paths.getPreloadPath(folder + file);
 
 		for (folder in foldersToCheck)
 		{
