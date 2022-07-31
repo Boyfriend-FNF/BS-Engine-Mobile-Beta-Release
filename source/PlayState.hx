@@ -680,6 +680,27 @@ class PlayState extends MusicBeatState
 		luaDebugGroup.cameras = [camOther];
 		add(luaDebugGroup);
 		#end
+			
+		// "GLOBAL" SCRIPTS
+		#if LUA_ALLOWED
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = 'scripts/';
+
+		for (folder in foldersToCheck)
+		{
+			if(OpenFlAssets.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.lua') && !filesPushed.contains(file))
+					{
+						luaArray.push(new FunkinLua(Asset2File.getPath(folder + file)));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
+		#end
 
 		#if (MODS_ALLOWED && LUA_ALLOWED)
 		var doPush:Bool = false;
@@ -1012,6 +1033,27 @@ class PlayState extends MusicBeatState
 		
 		if(doPush) 
 			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
+		#end
+			
+		// SONG SPECIFIC SCRIPTS
+		#if LUA_ALLOWED
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
+
+		for (folder in foldersToCheck)
+		{
+			if(OpenFlAssets.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.lua') && !filesPushed.contains(file))
+					{
+						luaArray.push(new FunkinLua(Asset2File.getPath(folder + file)));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
 		#end
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
