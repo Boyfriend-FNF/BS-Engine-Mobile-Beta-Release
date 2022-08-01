@@ -684,15 +684,15 @@ class PlayState extends MusicBeatState
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
 		        var filesPushed:Array<String> = [];
-		        var foldersToCheck:String = 'scripts/';
-	                foldersToCheck = Paths.getPreloadPath(folder);
-			if(OpenFlAssets.exists(folder))
+		        var luaToLoad:String = 'scripts/' + name + '.lua';
+	                luaToLoad = Paths.getPreloadPath(luaToLoad);
+			if(OpenFlAssets.exists(luaToLoad))
 			{
-				for (file in FileSystem.readDirectory(folder))
+				for (file in FileSystem.readDirectory(luaToLoad))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
-						luaArray.push(new FunkinLua(Asset2File.getPath(folder + file)));
+						luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
 						filesPushed.push(Asset2File.getPath(file));
 					}
 				}
@@ -1035,15 +1035,15 @@ class PlayState extends MusicBeatState
 		// SONG SPECIFIC SCRIPTS
 		#if LUA_ALLOWED
 		        var filesPushed:Array<String> = [];
-		        var foldersToCheck:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
-	                foldersToCheck = Paths.getPreloadPath(folder);
-			if(OpenFlAssets.exists(folder))
+		        var luaToLoad:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
+	                luaToLoad = Paths.getPreloadPath(luaToLoad);
+			if(OpenFlAssets.exists(luaToLoad))
 			{
-				for (file in FileSystem.readDirectory(folder))
+				for (file in FileSystem.readDirectory(luaToLoad))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
-						luaArray.push(new FunkinLua(Asset2File.getPath(folder + file)));
+						luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
 						filesPushed.push(Asset2File.getPath(file));
 					}
 				}
