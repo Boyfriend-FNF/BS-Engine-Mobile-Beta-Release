@@ -684,6 +684,7 @@ class PlayState extends MusicBeatState
 			
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
+		        var doPush:Bool = false;
 		        var luaFile:String = 'scripts/' + name + '.lua';
 	                luaFile = Paths.getPreloadPath(luaFile);
 			if(OpenFlAssets.exists(luaFile))
