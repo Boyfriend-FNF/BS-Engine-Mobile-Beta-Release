@@ -26,7 +26,7 @@ end
 
 
 function onUpdate(elapsed)
-    if DodgeSammy == 3 and keyJustPressed('space') then
+    if DodgeSammy == 3 and keyJustPressed('accept') then
         DodgeSammy = 2;
     end
     if DodgeSammy == 1 then
