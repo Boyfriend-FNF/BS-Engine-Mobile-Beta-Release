@@ -683,11 +683,9 @@ class PlayState extends MusicBeatState
 			
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
-		for (folder in foldersToCheck)
-		{
 		        var filesPushed:Array<String> = [];
-		        var luaToLoad:String = 'scripts/';
-	                luaToLoad = Paths.getPreloadPath(folder);
+		        var foldersToCheck:String = 'scripts/';
+	                foldersToCheck = Paths.getPreloadPath(folder);
 			if(OpenFlAssets.exists(folder))
 			{
 				for (file in FileSystem.readDirectory(folder))
@@ -699,7 +697,6 @@ class PlayState extends MusicBeatState
 					}
 				}
 			}
-		}
 		#end
 
 		#if (MODS_ALLOWED && LUA_ALLOWED)
@@ -1037,11 +1034,9 @@ class PlayState extends MusicBeatState
 			
 		// SONG SPECIFIC SCRIPTS
 		#if LUA_ALLOWED
-		for (folder in foldersToCheck)
-		{
 		        var filesPushed:Array<String> = [];
-		        var luaToLoad:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
-	                luaToLoad = Paths.getPreloadPath(folder);
+		        var foldersToCheck:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
+	                foldersToCheck = Paths.getPreloadPath(folder);
 			if(OpenFlAssets.exists(folder))
 			{
 				for (file in FileSystem.readDirectory(folder))
@@ -1053,7 +1048,6 @@ class PlayState extends MusicBeatState
 					}
 				}
 			}
-		}
 		#end
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
