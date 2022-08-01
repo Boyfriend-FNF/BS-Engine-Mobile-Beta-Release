@@ -58,7 +58,7 @@ end
 function onUpdate(elapsed)
     RandomColor = math.random(3,4,6,8,9,12)
 
-    if DodgeSans == 3 and keyJustPressed('space') and not botPlay or Dodge == 3 and Color == 'Orange' and botPlay or DodgeSans == 3 and botPlay and Color == 0 then
+    if DodgeSans == 3 and keyJustPressed('accept') and not botPlay or Dodge == 3 and Color == 'Orange' and botPlay or DodgeSans == 3 and botPlay and Color == 0 then
         playSound('sans/dodge')
         DodgeSans = 2;
     end
