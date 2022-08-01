@@ -20,6 +20,17 @@ import openfl.Assets;
 
 using StringTools;
 
+typedef TitleData =
+{
+	titlex:Float,
+	titley:Float,
+	startx:Float,
+	starty:Float,
+	gfx:Float,
+	gfy:Float,
+	backgroundSprite:String,
+	bpm:Int
+}
 class TitleState extends MusicBeatState
 {
 	public static var muteKeys:Array<FlxKey> = [FlxKey.ZERO];
