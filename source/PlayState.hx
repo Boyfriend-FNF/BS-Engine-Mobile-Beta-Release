@@ -123,6 +123,7 @@ class PlayState extends MusicBeatState
 	public var gfGroup:FlxSpriteGroup;
 
 	public static var curStage:String = '';
+  public static var name:String = '';
 	public static var isPixelStage:Bool = false;
 	public static var antireanim:Bool = false;
 	public static var SONG:SwagSong = null;
