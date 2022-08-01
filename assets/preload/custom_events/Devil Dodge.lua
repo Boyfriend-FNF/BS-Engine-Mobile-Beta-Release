@@ -59,7 +59,7 @@ function onUpdate(elapsed)
         end
     
 
-    if keyJustPressed('space') and DodgeDevilCreated == 0 or DodgeButtonPress and DodgeDevilCreated == 0 or getProperty('SmallDevil.x') > getProperty('boyfriend.x') - getProperty('boyfriend.width')/4 and getProperty('SmallDevil.x') < getProperty('boyfriend.x') + getProperty('boyfriend.width') /5 and botPlay and DodgeDevilCreated == 0 then
+    if keyJustPressed('accept') and DodgeDevilCreated == 0 or DodgeButtonPress and DodgeDevilCreated == 0 or getProperty('SmallDevil.x') > getProperty('boyfriend.x') - getProperty('boyfriend.width')/4 and getProperty('SmallDevil.x') < getProperty('boyfriend.x') + getProperty('boyfriend.width') /5 and botPlay and DodgeDevilCreated == 0 then
      DodgeDevilCreated = 1
      characterPlayAnim('boyfriend','dodge',false)
      setProperty('boyfriend.specialAnim',true)
