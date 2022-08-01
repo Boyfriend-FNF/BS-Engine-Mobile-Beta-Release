@@ -80,7 +80,7 @@ function onUpdate()
         removeLuaSprite('BigShotCuphead',false)
     end
  
-    if Dodge == 2 and keyJustPressed('space') and not botPlay or Dodge == 2 and botPlay then
+    if Dodge == 2 and keyJustPressed('accept') and not botPlay or Dodge == 2 and botPlay then
         Dodge = 1;
     end
 
