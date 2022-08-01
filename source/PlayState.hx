@@ -123,7 +123,7 @@ class PlayState extends MusicBeatState
 	public var gfGroup:FlxSpriteGroup;
 
 	public static var curStage:String = '';
-  public static var name:String = '';
+        public static var name:String = '';
 	public static var isPixelStage:Bool = false;
 	public static var antireanim:Bool = false;
 	public static var SONG:SwagSong = null;
@@ -684,20 +684,15 @@ class PlayState extends MusicBeatState
 			
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
-		        var filesPushed:Array<String> = [];
-		        var luaToLoad:String = 'scripts/' + name + '.lua';
-	                luaToLoad = Paths.getPreloadPath(luaToLoad);
-			if(OpenFlAssets.exists(luaToLoad))
+		        var luaFile:String = 'scripts/' + name + '.lua';
+	                luaFile = Paths.getPreloadPath(luaFile);
+			if(OpenFlAssets.exists(luaFile))
 			{
-				for (file in FileSystem.readDirectory(luaToLoad))
-				{
-					if(file.endsWith('.lua') && !filesPushed.contains(file))
-					{
-						luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
-						filesPushed.push(Asset2File.getPath(file));
-					}
-				}
+			   doPush = true;
 			}
+
+		if(doPush)
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
 		#end
 
 		#if (MODS_ALLOWED && LUA_ALLOWED)
@@ -1035,20 +1030,16 @@ class PlayState extends MusicBeatState
 			
 		// SONG SPECIFIC SCRIPTS
 		#if LUA_ALLOWED
-		        var filesPushed:Array<String> = [];
-		        var luaToLoad:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/';
-	                luaToLoad = Paths.getPreloadPath(luaToLoad);
-			if(OpenFlAssets.exists(luaToLoad))
+		        var doPush:Bool = false;
+		        var luaFile:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/' + name + '.lua';
+	                luaFile = Paths.getPreloadPath(luaFile);
+			if(OpenFlAssets.exists(luaFile))
 			{
-				for (file in FileSystem.readDirectory(luaToLoad))
-				{
-					if(file.endsWith('.lua') && !filesPushed.contains(file))
-					{
-						luaArray.push(new FunkinLua(Asset2File.getPath(luaToLoad)));
-						filesPushed.push(Asset2File.getPath(file));
-					}
-				}
+			  doPush = true;
 			}
+
+		if(doPush)
+			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
 		#end
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
